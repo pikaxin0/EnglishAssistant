@@ -1,0 +1,35 @@
+schema: spec-driven
+
+# Project context (optional)
+# This is shown to AI when creating artifacts.
+# Add your tech stack, conventions, style guides, domain knowledge, etc.
+# Example:
+#   context: |
+#     Tech stack: TypeScript, React, Node.js
+#     We use conventional commits
+#     Domain: e-commerce platform
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+# AHK-specific rules
+rules:
+  tasks:
+    # When editing AHK scripts about UI features, do NOT add manual testing tasks
+    # that require Windows environment, GUI interaction, or physical clicking.
+    # Only include test tasks that can be verified via command line (--test flag).
+    # Examples of EXCLUDED testing tasks:
+    # - "Test click-outside dismiss" - requires GUI interaction
+    # - "Test ESC key passthrough to applications" - requires Windows
+    # - "Test window positioning at cursor" - requires visual GUI
+    # Examples of INCLUDED testing tasks:
+    # - "Test --test flag with various inputs" - command line verifiable
+    # - "Test script syntax with --ErrorStdOut" - command line verifiable
+    - For AHK UI changes, only add command-line testable tasks
